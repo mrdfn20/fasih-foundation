@@ -228,7 +228,7 @@ body {
 
 .program-kami .row .menu-card {
   padding: 4rem;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   text-align: center;
 }
 
@@ -241,6 +241,16 @@ body {
 }
 
 /* program kami end */
+
+/* video embed start */
+
+.program-kami .embed-vid-yt {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 5rem;
+}
+
+/* video embed end */
 
 /* pendaftaran start */
 
