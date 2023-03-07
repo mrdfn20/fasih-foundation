@@ -35,13 +35,21 @@ body {
   z-index: 9999;
 }
 
-.navbar .navbar-fasih {
+.navbar .navbar-logo img {
+  height: 4rem;
+  margin-right: 0px;
+  margin-left: 5rem;
+}
+
+.navbar .navbar-tulisan-fasih {
   font-size: 2rem; /* 2*16 px */
   font-weight: 500; /*ketebalan tulisan*/
   color: #ffff;
+  position: relative;
+  right: 4rem;
 }
 
-.navbar .navbar-fasih span {
+.navbar .navbar-tulisan-fasih span {
   color: var(--primary);
 }
 
@@ -122,14 +130,15 @@ body {
 /* content on hero */
 .hero .content {
   padding: 1.4rem 5%; /*kiri: atas bawah, kanan: kiri kanan*/
-  max-width: 60rem;
+  max-width: 70rem;
 }
 
 .hero .content h1 {
-  font-size: 5em;
+  font-size: 4em;
   color: #ffff;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
   line-height: 1.2;
+  margin-top: 20rem;
 }
 
 .hero .content h1 span {
@@ -163,7 +172,7 @@ body {
 .profil,
 .program-kami h2,
 .kontak-kami {
-  padding: 6rem 5% 1.4rem; /*biar gk sembunyi dbwh navbar*/
+  padding: 8rem 5% 1.4rem; /*biar gk sembunyi dbwh navbar*/
 }
 
 .profil h2,
@@ -197,14 +206,14 @@ body {
 
 .profil .row .content h3 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .profil .row .content p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.3rem;
   font-size: 1.5rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 2;
 }
 
 /* profil section end */
@@ -212,7 +221,8 @@ body {
 /* program kami start */
 
 .program-kami h2 {
-  padding-top: 10rem;
+  padding-top: 7rem;
+  margin-bottom: 0rem;
 }
 
 .program-kami h2 span {
@@ -223,21 +233,45 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 5rem;
 }
 
 .program-kami .row .menu-card {
-  padding: 4rem;
-  margin-bottom: 5rem;
+  padding-top: 1rem;
   text-align: center;
 }
-
 .program-kami .row .menu-card img {
-  width: 300px;
+  width: 40rem;
   height: auto;
   border: 2px solid #ffc011;
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
   border-radius: 5%;
+}
+/* transisi menu-card */
+.program-kami .row .menu-card :hover {
+  transform: scale(1.1);
+  transition-delay: 0.3s;
+  transition: 0.3s;
+}
+
+.program-kami .row .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.program-kami .row .content h2 {
+  padding: 1%;
+  margin-bottom: 0.5rem;
+  font-size: 2.6rem;
+}
+
+.program-kami .row .content p {
+  padding: 2rem 18%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2;
+  padding-bottom: 5rem;
 }
 
 /* program kami end */
@@ -285,7 +319,7 @@ body {
 /* kontak kami start */
 
 .kontak-kami {
-  padding-top: 5.5rem;
+  padding-top: 7rem;
 }
 
 .kontak-kami h2 {
@@ -296,6 +330,19 @@ body {
   font-size: medium;
   text-align: center;
   margin-bottom: 0.8rem;
+}
+
+.kontak-kami .konten-kontak {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 2%;
+}
+
+.konten-kontak h3 {
+  font-size: 13px;
+  margin-left: 2rem;
+  margin-right: 1rem;
 }
 
 .kontak-kami .row {
@@ -365,9 +412,12 @@ body {
   margin: 1rem;
 }
 
-.footer .socials,
-.links a:hover {
+.footer .socials a :hover,
+.footer .links a {
+  transform: scale(1.5);
   color: #1a1d4e;
+  transition: 0.3s;
+  transition-delay: 0.1s;
 }
 
 footer .links {
@@ -375,7 +425,7 @@ footer .links {
 }
 
 .footer .links a {
-  color: #fff;
+  color: #ffffff;
   padding: 0.7rem 1rem;
 }
 
@@ -397,8 +447,22 @@ footer .credits a {
   }
 }
 
+/* laptop HiDPI */
+@media (min-width: 1440px) {
+  html {
+    font-size: 100%;
+  }
+
+  .navbar .navbar-logo img {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    right: 3.5rem;
+  }
+}
+
 /* Tablet */
-@media (max-width: 810px) {
+@media (max-width: 1024px) {
   html {
     font-size: 62%;
   }
@@ -407,12 +471,8 @@ footer .credits a {
     display: inline-block;
   }
 
-  /* .navbar .navbar-logo .logo {
-    display: none;
-  } */
-
   .navbar .navbar-nav {
-    /* display: none;  (gk pake display none, tp navbar out screen*/
+    /* display: none; */
     position: absolute;
     top: 100%;
     right: -100%; /* diluar layar*/
@@ -420,6 +480,15 @@ footer .credits a {
     width: 30rem;
     height: 100vh;
     transition: 0.3s;
+  }
+
+  .navbar .navbar-logo img {
+    display: none;
+  }
+
+  .navbar .navbar-tulisan-fasih {
+    position: relative;
+    right: 25rem;
   }
 
   .navbar .navbar-nav a {
@@ -461,6 +530,21 @@ footer .credits a {
     font-size: 2rem;
   }
 
+  .kontak-kami .konten-kontak {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 2rem 2%;
+    object-fit: cover; /*supaya gk ketarik pas di besarkan window*/
+    object-position: center;
+    flex-wrap: wrap;
+  }
+
+  .kontak-kami .konten-kontak h3 {
+    margin-bottom: 5rem;
+  }
+
   .kontak-kami .row {
     flex-wrap: wrap;
   }
@@ -495,6 +579,26 @@ footer .credits a {
     transition: 0.3s;
   }
 
+  .navbar .navbar-logo img {
+    display: flex;
+    height: 3rem;
+    margin-right: 7px;
+    margin-left: 0rem;
+  }
+
+  .navbar .navbar-tulisan-fasih {
+    font-size: 2rem; /* 2*16 px */
+    font-weight: 500; /*ketebalan tulisan*/
+    color: #ffff;
+    position: relative;
+    right: 4rem;
+  }
+
+  .program-kami .row .menu-card img {
+    width: 80%;
+    height: auto;
+  }
+
   .pendaftaran h2 {
     margin-top: 2rem;
     font-size: 2.3rem;
@@ -503,5 +607,6 @@ footer .credits a {
   .pendaftaran .row a img {
     object-fit: cover; /*supaya gk ketarik pas di besarkan window*/
     object-position: center;
+    width: 70%;
   }
 }
